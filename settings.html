@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+</head>
+<body>
+  <h1>Settings</h1>
+  <form id="settingsForm">
+    <label>
+      Default LLM:
+      <select name="defaultLLM">
+        <option value="chatGPT">ChatGPT</option>
+        <option value="bard">Bard</option>
+      </select>
+    </label>
+    <label>
+      Start on Startup:
+      <input type="checkbox" name="startOnStartup">
+    </label>
+    <button type="submit">Save</button>
+  </form>
+  <script src="settingsRenderer.js"></script>
+</body>
+</html>
