@@ -1,19 +1,52 @@
 {
   "name": "LLM-Desktop",
   "productName": "LLM Desktop",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Desktop application to make it easier to get to ChatGPT and Bard.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "CptBang",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^28.2.2"
+    "electron": "^28.2.2",
+    "electron-builder": "^24.9.1",
+    "electron-packager": "^17.1.2"
   },
   "dependencies": {
     "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "com.yourcompany.llmdesktop",
+    "productName": "LLM Desktop",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "asar": true
   }
 }

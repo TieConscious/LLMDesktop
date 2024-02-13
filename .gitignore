@@ -7,6 +7,20 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 
+# Packaging directories
+release-builds/
+dist/
+build/
+*-darwin-*
+*-win32-*
+*-linux-*
+
+# Executable files
+*.exe
+*.app
+*.dmg
+*.pkg
+
 # MacOS directory attributes
 .DS_Store
 

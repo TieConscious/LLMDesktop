@@ -1,4 +1,4 @@
-const { Menu } = require('electron');
+const { app, Menu } = require('electron');
 const { createSettingsWindow } = require('./settingsWindow');
 const { loadUrlInMainWindow } = require('./mainWindow');
 const urls = require('./urls');

@@ -9,10 +9,17 @@ console.log(app.getPath('userData'));
 
 function createWindow() {
   app.setName('LLM Desktop');
-  const defaultLLM = getSetting('defaultLLM') || 'ChatGPT';
-  createMainWindow(urls[defaultLLM]);
+  const defaultLLM = getSetting('defaultLLM') || 'ChatGPT'; // Ensure the fallback value matches a key in `urls`
+  const urlToLoad = urls[defaultLLM];
+  if (urlToLoad) {
+    createMainWindow(urlToLoad);
+  } else {
+    console.error(`No URL found for LLM: ${defaultLLM}`);
+    createMainWindow(urls['ChatGPT']);
+  }
   setupMenu();
 }
+
 
 setupIpcHandlers();
 
