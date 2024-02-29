@@ -8,8 +8,8 @@ function createMainWindow(loadUrl) {
     height: 600,
     title: "LLM Desktop",
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: false,
+      contextIsolation: true
     }
   });
 
